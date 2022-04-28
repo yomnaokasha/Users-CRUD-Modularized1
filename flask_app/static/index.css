@@ -1,0 +1,9 @@
+.table {
+  width: 750px;
+  height: 150px;
+  border-color: black;
+  border: solid;
+}
+.head {
+  padding-right: -30px;
+}

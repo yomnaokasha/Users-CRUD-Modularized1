@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='index.css') }}"
+    />
+    <title>users</title>
+  </head>
+  <body>
+    <h1>All Users</h1>
+    <table class="table">
+      <thead>
+        <tr class="head">
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>created at</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in all_users %}
+        <tr>
+          <td class="row">{{user.id}}</td>
+          <td class="row">{{user.full_name()}}</td>
+          <td class="row">{{user.email}}</td>
+          <td class="row">{{user.created_at}}</td>
+          <td>
+            <a href="/users/{{user.id}}">Show</a>|
+            <a href="/users/{{user.id}}/edit">Edit</a> |
+            <a href="/users/{{user.id}}/destroy">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href=" /users/new ">Add a new user</a>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"  type="text/css"
+    href="{{ url_for('static', filename='survey.css') }}">
+    <title>form</title>
+    <body>
+    <a href=" /users">Home</a>
+    <h1 class="head">Add a user</h1>
+    <form class="form" action="/users/create" method="post">
+        <div class="body">
+            <label class="input"  for="name">First name</label>
+            <input type="text" name="first_name" />
+        </div>
+        <div class="body">
+            <label class="input"  for="name">Last Name</label>
+            <input type="text" name="last_name" />
+        </div>
+        <div class="body">
+            <label class="input"  for="name">Email</label>
+            <input type="text" name="email" />
+        </div>
+        <div>
+            <input class="button" type="submit" value="create">
+        </div>
+    </form>
+  </head>
+  </body>
+</html>
